@@ -48,6 +48,8 @@ tilt-and-relax orbit and `handle.engine` (the engine objects, for advanced pages
 optional peer `playcanvas` (`>=2.22.3 <3`) and reads `.sog`, `.ply` and a Streamed-SOG
 `lod-meta.json`. **Spark stays the default**; a page that never passes `engine` never loads
 `playcanvas`. What differs, and why: [`docs/playcanvas-adapter.md`](docs/playcanvas-adapter.md).
+The repo's splat sample (`samples/splat/`) renders with PlayCanvas and keeps `?engine=spark` as
+its A/B switch.
 Bundlers: the engine is a literal `import('playcanvas')`; its sort workers are Blob URLs (CSP
 `worker-src blob:`), and esbuild needs `node:worker_threads` marked external.
 
@@ -121,7 +123,7 @@ samples/
                       convergence + comfort, the attach pattern, C to A/B a display rig
   windows/            mixed 3D windows — still photos + a live video + a real-time three.js scene,
                       each woven with one SDK call, all on one session
-  splat/              a 3D Gaussian splat in a tile, auto-framed, with a 2D price plate over it
+  splat/              a 3D Gaussian splat in a tile (PlayCanvas; ?engine=spark), with a 2D plate over it
   model/              a glTF mesh, a mesh+splat scene, and a Draco-COMPRESSED glTF in three tiles
   composition/        the 14-case 2D/3D overlap matrix — demo AND standing hardware regression
                       surface; red cases ship red (see samples/README.md)
